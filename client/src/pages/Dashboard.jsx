@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import dummyData from "../data/dummyData"
 
 import {
@@ -9,9 +10,7 @@ import {
 
 const Dashboard = () => {
 
-  // =========================================
-  // TASK COUNTS
-  // =========================================
+const navigate = useNavigate()
 
   const totalTasks = dummyData.length
 
@@ -292,9 +291,8 @@ const Dashboard = () => {
 
 
 
-        {/* ========================================= */}
-        {/* UPCOMING TASKS */}
-        {/* ========================================= */}
+
+        
 
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
 
@@ -375,7 +373,7 @@ const Dashboard = () => {
 
           <div className="flex justify-center mt-8">
 
-            <button className="text-blue-600 font-semibold text-lg hover:underline">
+            <button onClick={()=> navigate('/layout/task')} className="text-blue-600 font-semibold text-lg hover:underline cursor-pointer ">
 
               View all tasks →
 
